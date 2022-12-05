@@ -10,6 +10,7 @@ const HOST = process.env.HOST || "http://localhost:";
 
 const app = express();
 
+app.use(express.json());
 app.use(router);
 
 app.listen(PORT, () => {
