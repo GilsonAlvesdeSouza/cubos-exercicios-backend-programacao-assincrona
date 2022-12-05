@@ -1,4 +1,4 @@
-import { Router, Request, Response } from "express";
+import { Router } from "express";
 
 import { ProductController } from "./controllers";
 
@@ -6,10 +6,7 @@ const productController = new ProductController();
 
 const router = Router();
 
-router.get("/", (req: Request, res: Response) => {
-  res.json({ ok: true });
-});
-
 router.get("/produtos", productController.index);
+router.get("/produtos/:id/frete/:cep", productController.show);
 
 export { router };

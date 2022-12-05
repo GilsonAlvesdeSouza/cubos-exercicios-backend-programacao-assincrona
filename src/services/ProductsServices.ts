@@ -4,7 +4,7 @@ interface ProductInterface {
   value: number;
 }
 
-const produtcs: Array<ProductInterface> = [
+const products: Array<ProductInterface> = [
   { id: 1, name: "Teclado mecânico Keychron K2", value: 100000 },
   { id: 2, name: "TV Samsung 4K", value: 129900 },
   { id: 3, name: "Notebook Dell", value: 399990 },
@@ -18,7 +18,12 @@ const produtcs: Array<ProductInterface> = [
 
 class ProductService {
   getAll() {
-    return produtcs;
+    return products;
+  }
+
+  getById(id: number) {
+    const product = products.find((product) => product.id === id);
+    return product;
   }
 }
 
